@@ -1,1 +1,97 @@
+:root {
+  --gray-1: #F8F9FA;
+  --gray-2: #E9ECEF;
+  --gray-3: #DEE2E6;
+  --gray-4: #CED4DA;
+  --gray-5: #ADB5BD;
+  --gray-6: #6C757D;
+  --gray-7: #495057;
+  --gray-8: #343A40;
+  --gray-9: #212529;
+
+  --blue-1: #00BBEF;
+  --blue-2: #195F72;
+  --blue-3: #0B3C49;
+}
+
+.grid1200 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h1 {
+  font-family: 'Bitter', serif;
+  font-size: 76.29px;
+  font-weight: 400;
+  line-height: 110%;
+  color: var(--gray-9);
+}
+h2 {
+  font-family: 'Bitter', serif;
+  font-size: 61.04px;
+  font-weight: 400;
+  line-height: 110%;
+  color: var(--gray-9);
+}
+h3 {
+  font-family: 'Bitter', serif;
+  font-size: 48.83px;
+  font-weight: 400;
+  line-height: 110%;
+  color: var(--gray-9);
+}
+h4 {
+  font-family: 'Bitter', serif;
+  font-size: 39.06px;
+  font-weight: 400;
+  line-height: 110%;
+  color: var(--gray-9);
+}
+h5 {
+  font-family: 'Bitter', serif;
+  font-size: 31.25px;
+  font-weight: 400;
+  line-height: 110%;
+  color: var(--gray-9);
+}
+h6 {
+  font-family: 'Bitter', serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 110%;
+  color: var(--gray-9);
+}
+p {
+  font-family: 'Bitter', serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 110%;
+  color: var(--gray-9);
+}
+p.small {
+  font-family: 'Bitter', serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--gray-9);
+}
+p.bold, h1.bold, h2.bold, h3.bold, h4.bold, h5.bold, h6.bold {
+  font-weight: 700;
+}
+p.italic, h1.italic, h2.italic, h3.italic, h4.italic, h5.italic, h6.italic {
+  font-style: italic;
+}
+p.upper, h1.upper, h2.upper, h3.upper, h4.upper, h5.upper, h6.upper {
+  text-transform: uppercase;
+}
+label {
+  font-family: 'Bitter', serif;
+  font-size: 12.28px;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--gray-9);
+}
 

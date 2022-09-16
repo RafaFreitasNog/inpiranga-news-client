@@ -1,0 +1,27 @@
+#input-field {
+  height: 40px;
+  width: 100%;
+  background-color: var(--gray-2);
+  border: 2px var(--gray-2) solid;
+  box-sizing: border-box;
+  transition: 0.3s;
+  border-radius: 4px;
+  width: 100%;
+  padding-left: 12px;
+  margin-top: 6px;
+}
+#input-field:hover {
+  border: 2px var(--blue-2) solid;
+  
+}
+#input-field:focus {
+  border: 2px var(--blue-1) solid;
+  background: none;
+}
+#input-text-asset-conteiner {
+  margin: 12px 0 12px 0;
+}
+#input-text-label {
+  color: var(--blue-2);
+  margin-left: 4px;
+}

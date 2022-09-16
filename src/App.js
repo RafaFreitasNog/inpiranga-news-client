@@ -1,11 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import { Fragment } from 'react';
+import LoginPage from './pages/loginPage';
 
 function App() {
   return (
     <Fragment>
-      <p>oi</p>
+      <LoginPage/>
     </Fragment>
   );
 }

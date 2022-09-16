@@ -1,0 +1,39 @@
+#login-area-conteiner {
+  background-color: var(--gray-1);
+  height: 640px;
+  border-radius: 8px;
+
+  grid-column: 3 / 11;
+  align-self: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-content-conteiner {
+  height: 100%;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#login-form-conteiner {
+  width: 100%;
+}
+
+#login-logo-conteiner {
+  margin: 40px 0 40px 0;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+#login-logo {
+  color: var(--blue-2);
+}
