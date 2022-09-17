@@ -4,9 +4,10 @@ import './style.css'
 function InputText(props) {
   return ( 
     <Fragment>
-      <div id='input-text-asset-conteiner'>
-        <label id='input-text-label' htmlFor='email'>{props.label}</label>
-        <input type={props.type} placeholder={props.placeholder} name="email" id='input-field' />
+      <div className='input-text-asset-conteiner'>
+        <label className='input-text-label' htmlFor='email'>{props.label}</label>
+        <input className='input-field' type={props.type} placeholder={props.placeholder} name="email" 
+        onChange={(e) => props.updateFunction(e.target.value)}/>
       </div>
     </Fragment>
    );

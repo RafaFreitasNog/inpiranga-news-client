@@ -78,6 +78,10 @@ p.small {
   line-height: 100%;
   color: var(--gray-9);
 }
+p.line {
+  color: var(--gray-5);
+  font-size: 12.28px;
+}
 p.bold, h1.bold, h2.bold, h3.bold, h4.bold, h5.bold, h6.bold {
   font-weight: 700;
 }
@@ -93,5 +97,19 @@ label {
   font-weight: 400;
   line-height: 100%;
   color: var(--gray-9);
+}
+
+button {
+  font-family: 'Bitter', serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 110%;
+  text-transform: capitalize;
+}
+button.blue2 {
+  background-color: var(--blue-2);
+}
+button.blue3 {
+  background-color: var(--blue-3);
 }
 
