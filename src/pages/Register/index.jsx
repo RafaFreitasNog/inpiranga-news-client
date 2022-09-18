@@ -1,12 +1,16 @@
 import { Fragment, useState } from 'react';
-import LoginArea from '../../components/loginSection';
+import RegisterSection from '../../components/registerSection';
 import './style.css'
 
-function LoginPage() {
-
+function Register() {
+  
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  function handleNameChange(inputValue) {
+    setName(inputValue)
+  }
   function handleEmailChange(inputValue) {
     setEmail(inputValue)
   }
@@ -14,12 +18,11 @@ function LoginPage() {
     setPassword(inputValue)
   }
 
-  console.log('Rendered');
-
   return (
     <Fragment>
-      <div id='login-background-conteiner' className='grid1200'>
-        <LoginArea 
+      <div id='register-background-conteiner' className='grid1200'>
+        <RegisterSection
+        handleNameChange={handleNameChange}
         handleEmailChange={handleEmailChange}
         handlePasswordChange={handlePasswordChange}/>
       </div>
@@ -27,4 +30,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default Register;

@@ -1,9 +1,4 @@
-.inputtext-conteiner {
-  margin: 16px 0 16px 0;
-  width: 100%;
-}
-
-.inputtext-field {
+.inputtextlabel-field {
   height: 40px;
   width: 100%;
   background-color: var(--gray-2);
@@ -12,14 +7,22 @@
   transition: 0.3s;
   border-radius: 4px;
   width: 100%;
-  padding-left: 16px;
+  padding-left: 12px;
   margin-top: 8px;
 }
-.inputtext-field:hover {
+.inputtextlabel-field:hover {
   border: 2px var(--blue-2) solid;
   
 }
-.inputtext-field:focus {
+.inputtextlabel-field:focus {
   border: 2px var(--blue-1) solid;
   background: none;
+}
+.inputtextlabel-conteiner {
+  margin: 16px 0 16px 0;
+  width: 100%;
+}
+.inputtextlabel-label {
+  color: var(--blue-2);
+  margin-left: 4px;
 }

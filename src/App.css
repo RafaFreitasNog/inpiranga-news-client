@@ -16,9 +16,9 @@
 
 .grid1200 {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 72px);
   column-gap: 24px;
-  max-width: 1200px;
+  max-width: 1128px;
   margin: auto;
 }
 
@@ -93,7 +93,7 @@ p.upper, h1.upper, h2.upper, h3.upper, h4.upper, h5.upper, h6.upper {
 }
 label {
   font-family: 'Bitter', serif;
-  font-size: 12.28px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 100%;
   color: var(--gray-9);

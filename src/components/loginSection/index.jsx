@@ -1,8 +1,9 @@
 import { Fragment } from 'react';
 import './style.css'
-import InputText from '../../assets/inputText';
+import InputTextLabel from '../../assets/inputTextLabel';
 import Button from '../../assets/button';
 import DivisionLine from '../../assets/divisionLine';
+import { Link } from 'react-router-dom';
 
 function LoginArea(props) {
   return ( 
@@ -16,14 +17,14 @@ function LoginArea(props) {
             </div>
 
             <form action="" id='login-form-conteiner'>
-              <p id='loginText' className='upper'>Login</p>
-              <div id='inputs-conteiner'>
-                <InputText label='E-mail' type='email' placeholder='exemple@email.com' updateFunction={props.handleEmailChange}/>
-                <InputText label='Password' type='password' placeholder='password' updateFunction={props.handlePasswordChange}/>
+              <p id='loginText' className='upper bold'>Login</p>
+              <div id='login-inputs-conteiner'>
+                <InputTextLabel label='E-mail' type='email' placeholder='exemple@email.com' updateFunction={props.handleEmailChange}/>
+                <InputTextLabel label='Password' type='password' placeholder='password' updateFunction={props.handlePasswordChange}/>
               </div>
               <Button text='sign in' />
               <DivisionLine text='or' />
-              <Button text='register' />
+              <Link id='login-page-register-link' to='/register'><Button text='register' /></Link>
             </form>
 
           </div>

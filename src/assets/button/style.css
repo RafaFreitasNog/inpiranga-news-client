@@ -1,7 +1,12 @@
 .button-asset {
   height: 40px;
   width: 100%;
-  background-color: var(--blue-1);
+  background-color: var(--blue-2);
   color: var(--gray-1);
   border-radius: 4px;
+  transition: 0.3s;
+}
+
+.button-asset:hover {
+  background-color: var(--blue-3);
 }

@@ -1,0 +1,8 @@
+body {
+  background-color: var(--blue-3);
+}
+
+#register-background-conteiner {
+  background-color: var(--blue-3);
+  height: 100vh;
+}
