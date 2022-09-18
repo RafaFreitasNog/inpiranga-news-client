@@ -13,13 +13,15 @@ function Login() {
   function handlePasswordChange(inputValue) {
     setPassword(inputValue)
   }
-  
+
   return (
     <Fragment>
       <div id='login-background-conteiner' className='grid1200'>
         <LoginArea 
         handleEmailChange={handleEmailChange}
-        handlePasswordChange={handlePasswordChange}/>
+        handlePasswordChange={handlePasswordChange}
+        currEmail={email}
+        currPassword={password}/>
       </div>
     </Fragment>
   );

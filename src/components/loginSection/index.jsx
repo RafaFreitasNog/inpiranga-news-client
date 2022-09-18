@@ -19,8 +19,10 @@ function LoginArea(props) {
             <form action="" id='login-form-conteiner'>
               <p id='loginText' className='upper bold'>Login</p>
               <div id='login-inputs-conteiner'>
-                <InputTextLabel label='E-mail' type='email' placeholder='exemple@email.com' updateFunction={props.handleEmailChange}/>
-                <InputTextLabel label='Password' type='password' placeholder='password' updateFunction={props.handlePasswordChange}/>
+                <InputTextLabel label='E-mail' type='email' placeholder='exemple@email.com' currValue={props.currEmail}
+                updateFunction={props.handleEmailChange}/>
+                <InputTextLabel label='Password' type='password' placeholder='password' currValue={props.currPassword}
+                updateFunction={props.handlePasswordChange}/>
               </div>
               <Button text='sign in' />
               <DivisionLine text='or' />
