@@ -25,7 +25,7 @@ function RegisterSection(props) {
               </div>
               <Button text='register' />
               <DivisionLine text='or' />
-              <Link id='register-page-login-link' to='/'><Button text='sign in' /></Link>
+              <Link id='register-page-login-link' to='/login'><Button text='sign in' /></Link>
             </form>
         </div>
       </div>

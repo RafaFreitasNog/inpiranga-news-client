@@ -6,7 +6,7 @@ const Routing = () => (
   <Router>
     <Routes>
       <Route path='/register' element={<Register/>} />
-      <Route path='/' element={<Login/>} />
+      <Route path='/login' element={<Login/>} />
     </Routes>
   </Router>
 )
