@@ -1,0 +1,13 @@
+.checkbox-label-conteiner {
+  width: 100%;
+  display: flex;
+
+  margin: 16px 0 16px 4px;
+  
+}
+.checkbox-label-input {
+  margin-right: 8px;
+}
+.checkbox-label-label {
+  color: var(--blue-2);
+}

@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../../assets/button';
+import CheckboxLabel from '../../assets/checkboxLabel';
 import DivisionLine from '../../assets/divisionLine';
 import InputTextLabel from '../../assets/inputTextLabel';
 import './style.css'
@@ -20,6 +21,7 @@ function RegisterSection(props) {
                 <InputTextLabel label='Name' type='text' placeholder='name' updateFunction={props.handleNameChange}/>
                 <InputTextLabel label='E-mail' type='email' placeholder='exemple@email.com' updateFunction={props.handleEmailChange}/>
                 <InputTextLabel label='Password' type='password' placeholder='password' updateFunction={props.handlePasswordChange}/>
+                <CheckboxLabel label='Columnist account' name='isColumnistCheck' updateFunction={props.handleIsColumnistCheck}/>
               </div>
               <Button text='register' />
               <DivisionLine text='or' />
