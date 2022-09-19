@@ -14,8 +14,8 @@ function RegisterSection(props) {
             <h1 id='register-logo' className='bold'>IN</h1>
             <h4 className='bold'>Ipiranga News</h4>
           </div>
-          <form action="" id='register-form-conteiner'>
-              <p id='loginText' className='upper bold'>Login</p>
+          <form onSubmit={props.handleSubmit} action="" id='register-form-conteiner'>
+              <p id='loginText' className='upper bold'>Register</p>
               <div id='register-inputs-conteiner'>
                 <InputTextLabel label='Name' type='text' placeholder='name' updateFunction={props.handleNameChange}/>
                 <InputTextLabel label='E-mail' type='email' placeholder='exemple@email.com' updateFunction={props.handleEmailChange}/>
