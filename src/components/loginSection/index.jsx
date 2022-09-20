@@ -4,6 +4,7 @@ import InputTextLabel from '../../assets/inputTextLabel';
 import Button from '../../assets/button';
 import DivisionLine from '../../assets/divisionLine';
 import { Link } from 'react-router-dom';
+import CheckboxLabel from '../../assets/checkboxLabel';
 
 function LoginArea(props) {
   return ( 
@@ -16,13 +17,16 @@ function LoginArea(props) {
               <h4 className='bold'>Ipiranga News</h4>
             </div>
 
-            <form action="" id='login-form-conteiner'>
+            <form onSubmit={props.handleSubmit} action="" id='login-form-conteiner'>
               <p id='loginText' className='upper bold'>Login</p>
               <div id='login-inputs-conteiner'>
-                <InputTextLabel label='E-mail' type='email' placeholder='exemple@email.com' currValue={props.currEmail}
+                <InputTextLabel label='E-mail' type='email' placeholder='exemple@email.com'
                 updateFunction={props.handleEmailChange}/>
-                <InputTextLabel label='Password' type='password' placeholder='password' currValue={props.currPassword}
+                <InputTextLabel label='Password' type='password' placeholder='password'
                 updateFunction={props.handlePasswordChange}/>
+                <CheckboxLabel label='Columnist account' name='isColumnistCheck' 
+                updateFunction={props.handleIsColumnistCheck}/>
+                <p className='error'>{props.errorMessage}</p>
               </div>
               <Button text='sign in' />
               <DivisionLine text='or' />
