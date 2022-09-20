@@ -1,4 +1,5 @@
 import { Fragment, useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import RegisterSection from '../../components/registerSection';
 import ColumnistService from '../../services/columnist';
 import UserService from '../../services/user';
@@ -15,6 +16,9 @@ function Register() {
   const [error, setError] = useState('')
   const [redirect, setRedirect] = useState(false)
 
+  if (redirect) {
+    return <Navigate to='/login' />
+  }
 
   const HandleSubmit = async (evt) => {
     evt.preventDefault();
@@ -26,8 +30,9 @@ function Register() {
           password: password
         })
         console.log(user)
+        setRedirect(true)
       } catch (error) {
-        console.log(error.response.data.error)
+        setError(error.response.data.error)
       }
     } else {
       try {
@@ -36,9 +41,10 @@ function Register() {
           email: email,
           password: password
         })
+        setRedirect(true)
         console.log(user)
       } catch (error) {
-        console.log(error.response.data.error)
+        setError(error.response.data.error)
       }
     }
   }
@@ -64,6 +70,7 @@ function Register() {
         handleEmailChange={handleEmailChange}
         handlePasswordChange={handlePasswordChange}
         handleIsColumnistCheck={handleIsColumnistCheck}
+        errorMessage={error}
         handleSubmit={HandleSubmit}/>
       </div>
     </Fragment>

@@ -78,6 +78,13 @@ p.small {
   line-height: 100%;
   color: var(--gray-9);
 }
+p.error {
+  font-family: 'Bitter', serif;
+  font-size: 12.28px;
+  font-weight: 400;
+  line-height: 100%;
+  color: red;
+}
 p.line {
   color: var(--gray-5);
   font-size: 12.28px;

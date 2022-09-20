@@ -22,6 +22,7 @@ function RegisterSection(props) {
                 <InputTextLabel label='E-mail' type='email' placeholder='exemple@email.com' updateFunction={props.handleEmailChange}/>
                 <InputTextLabel label='Password' type='password' placeholder='password' updateFunction={props.handlePasswordChange}/>
                 <CheckboxLabel label='Columnist account' name='isColumnistCheck' updateFunction={props.handleIsColumnistCheck}/>
+                <p className='error'>{props.errorMessage}</p>
               </div>
               <Button text='register' />
               <DivisionLine text='or' />
