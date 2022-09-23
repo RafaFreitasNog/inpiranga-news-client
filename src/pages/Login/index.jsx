@@ -1,47 +1,32 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useContext, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import LoginArea from '../../components/loginSection';
-import ColumnistService from '../../services/columnist';
-import UserService from '../../services/user';
+import { Context } from '../../contexts/AuthContext';
 import './style.css'
 
 function Login() {
+
+  const { auth, handleLogin } = useContext(Context)
+
+  console.log(auth)
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const [isColumnist, setIsColumnist] = useState(false)
   const [error, setError] = useState('')
-  const [redirect, setRedirect] = useState(false)
 
-  if (redirect) {
+  if (auth) {
     return <Navigate to="/menu" />
   }
 
   const HandleSubmit = async (evt) => {
     evt.preventDefault();
-    if (isColumnist) {
-      try {
-        const user = await ColumnistService.login({
-          email: email,
-          password: password
-        })
-        console.log(user);
-        setRedirect(true);
-      } catch (error) {
-        setError(error.response.data.error)
-      }
-    } else {
-      try {
-        const user = await UserService.login({
-          email: email,
-          password: password
-        })
-        console.log(user);
-        setRedirect(true);
-      } catch (error) {
-        setError(error.response.data.error)
-      }
+    try {
+      const returnedError = await handleLogin(email, password, isColumnist)
+      setError(returnedError.response.data.error)
+    } catch (error) {
+      console.log(error);
     }
   }
 

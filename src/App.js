@@ -1,11 +1,14 @@
 import './App.css';
 import { Fragment } from 'react';
 import Routing from './routes';
+import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   return (
     <Fragment>
-      <Routing/>
+      <AuthProvider>
+        <Routing/>
+      </AuthProvider>
     </Fragment>
   );
 }
