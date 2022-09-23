@@ -65,7 +65,7 @@ function Register() {
   return (
     <Fragment>
       <div id='register-conteiner'>
-        <div id='register-background-conteiner' className='grid1200'>
+        <div id='register-grid-conteiner' className='grid1200'>
           <RegisterSection
           handleNameChange={handleNameChange}
           handleEmailChange={handleEmailChange}

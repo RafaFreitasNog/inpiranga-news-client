@@ -43,7 +43,7 @@ function Login() {
   return (
     <Fragment>
       <div id='login-background'>
-        <div id='login-background-conteiner' className='grid1200'>
+        <div id='login-grid-conteiner' className='grid1200'>
           <LoginArea 
           handleEmailChange={handleEmailChange}
           handlePasswordChange={handlePasswordChange}

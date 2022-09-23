@@ -1,0 +1,15 @@
+#menu-grid-conteiner{
+  background-color: var(--gray-1);
+  margin-top: 64px;
+  row-gap: 32px;
+}
+#menu-main-section-title-conteiner {
+  grid-column: 1 / span 12;
+  justify-self: center;
+}
+#menu-main-section-title {
+  color: var(--blue-2);
+}
+.line-asset-conteiner {
+  grid-column: 1 / span 12;
+}

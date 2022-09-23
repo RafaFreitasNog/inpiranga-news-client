@@ -6,7 +6,7 @@ function DivisionLine(props) {
     <Fragment>
       <div className='line-asset-conteiner'>
         <hr className='line-asset' />
-        <p className='small line line-asset-text'>{props.text}</p>
+        <p className='small line line-asset-text bold'>{props.text}</p>
         <hr className='line-asset' />
       </div>
     </Fragment>
