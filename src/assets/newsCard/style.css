@@ -1,4 +1,5 @@
 .news-card-conteiner {
+  height: 330px;
   background-color: var(--gray-1);
   box-sizing: border-box;
   grid-column: span 4;
@@ -6,10 +7,9 @@
   border: 1px solid var(--gray-4);
   box-shadow: 2px 2px var(--gray-4);
 
-
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .news-card-title-conteiner {

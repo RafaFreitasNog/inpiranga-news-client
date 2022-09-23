@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Api from "../services/api";
 import ColumnistService from "../services/columnist";
 import UserService from "../services/user";
 
@@ -18,6 +19,8 @@ function AuthProvider({ children }) {
           password: password
         })
         console.log(response);
+        localStorage.setItem("in-token", JSON.stringify(response.data.token))
+        Api.defaults.headers.authtoken = `${response.data.token}`;
         setAuth(true)
       } catch (error) {
         return error
@@ -29,6 +32,7 @@ function AuthProvider({ children }) {
           password: password
         })
         console.log(response);
+        localStorage.setItem("in-token", JSON.stringify(response.data.token))
         setAuth(true)
       } catch (error) {
         return error

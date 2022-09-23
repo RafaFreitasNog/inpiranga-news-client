@@ -8,14 +8,12 @@ function Login() {
 
   const { auth, handleLogin } = useContext(Context)
 
-  console.log(auth)
-
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const [isColumnist, setIsColumnist] = useState(false)
   const [error, setError] = useState('')
-
+  
   if (auth) {
     return <Navigate to="/menu" />
   }
@@ -24,7 +22,9 @@ function Login() {
     evt.preventDefault();
     try {
       const returnedError = await handleLogin(email, password, isColumnist)
-      setError(returnedError.response.data.error)
+      if (returnedError) {
+        setError(returnedError.response.data.error)
+      }
     } catch (error) {
       console.log(error);
     }

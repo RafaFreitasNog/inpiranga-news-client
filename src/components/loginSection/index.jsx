@@ -1,15 +1,12 @@
-import { Fragment, useContext } from 'react';
+import { Fragment } from 'react';
 import './style.css'
 import InputTextLabel from '../../assets/inputTextLabel';
 import Button from '../../assets/button';
 import DivisionLine from '../../assets/divisionLine';
 import { Link } from 'react-router-dom';
 import CheckboxLabel from '../../assets/checkboxLabel';
-import { Context } from '../../contexts/AuthContext';
 
 function LoginArea(props) {
-
-  const { handleLogin } = useContext(Context)
 
   return ( 
     <Fragment>
@@ -35,7 +32,6 @@ function LoginArea(props) {
               <Button text='sign in' />
               <DivisionLine text='or' />
               <Link id='login-page-register-link' to='/register'><Button text='register' /></Link>
-              <button type='button' onClick={handleLogin}>log</button>
             </form>
 
           </div>
