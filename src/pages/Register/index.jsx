@@ -64,14 +64,16 @@ function Register() {
 
   return (
     <Fragment>
-      <div id='register-background-conteiner' className='grid1200'>
-        <RegisterSection
-        handleNameChange={handleNameChange}
-        handleEmailChange={handleEmailChange}
-        handlePasswordChange={handlePasswordChange}
-        handleIsColumnistCheck={handleIsColumnistCheck}
-        errorMessage={error}
-        handleSubmit={HandleSubmit}/>
+      <div id='register-conteiner'>
+        <div id='register-background-conteiner' className='grid1200'>
+          <RegisterSection
+          handleNameChange={handleNameChange}
+          handleEmailChange={handleEmailChange}
+          handlePasswordChange={handlePasswordChange}
+          handleIsColumnistCheck={handleIsColumnistCheck}
+          errorMessage={error}
+          handleSubmit={HandleSubmit}/>
+        </div>
       </div>
     </Fragment>
   );
