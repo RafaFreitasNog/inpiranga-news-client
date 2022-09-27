@@ -3,7 +3,6 @@
   background-color: var(--blue-2);
   border-bottom: 8px solid var(--blue-3);
 }
-
 #header-content-conteiner {
   height: 100%;
   display: grid;
@@ -20,20 +19,23 @@
 #header-right {
   justify-self: flex-end;
 }
+
+#header-menu-conteiner{
+  display: flex;
+  align-items: center;
+}
 #header-menu-icon {
   font-size: 24px;
   margin: 0 8px 0 0;
 }
-#header-profile-icon {
-  font-size: 20px;
-  margin: 0 8px 2px 0;
-}
+
 #header-profile-conteiner{
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
-#header-menu-conteiner{
-  display: flex;
-  align-items: center;
+#header-profile-icon {
+  font-size: 20px;
+  margin: 0 8px 2px 0;
 }
 

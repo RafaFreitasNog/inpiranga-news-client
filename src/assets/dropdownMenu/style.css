@@ -1,0 +1,21 @@
+.dropdown-menu-conteiner {
+  width: 240px;
+  min-height: 48px;
+  background-color: var(--gray-2);
+  position: absolute;
+  right: 64px;
+  top: 72px;
+  border-radius: 4px;
+}
+.dropdown-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  width: 100%;
+  background: none;
+}
+
+#logout-icon {
+  font-size: 20px;
+}
