@@ -5,7 +5,7 @@ function Loading(props) {
   return ( 
     <Fragment>
       <div id='loading-screen-conteiner'>
-        <h3 className='bold white'>Ipiranga News Loading</h3>
+        <h3 className='bold white'>Ipiranga News</h3>
       </div>
     </Fragment>
    );

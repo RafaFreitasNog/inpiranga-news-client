@@ -1,6 +1,6 @@
 import './App.css';
 import { Fragment } from 'react';
-import Routing from './routes';
+import Routing from './routes/routes';
 import { AuthProvider } from './contexts/AuthContext';
 
 function App() {

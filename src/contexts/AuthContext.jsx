@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import Loading from "../pages/LoadingScreen";
 import Api from "../services/api";
 import ColumnistService from "../services/columnist";
 import UserService from "../services/user";
@@ -8,8 +9,9 @@ const Context = createContext();
 function AuthProvider({ children }) {
 
   const [auth, setAuth] = useState(false);
-  
-  console.log(auth)
+  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(true);
+
 
   async function handleLogin(email, password, isColumnist) {
     if (isColumnist) {
@@ -18,9 +20,10 @@ function AuthProvider({ children }) {
           email: email,
           password: password
         })
-        console.log(response);
         localStorage.setItem("in-token", JSON.stringify(response.data.token))
+        localStorage.setItem("in-user", JSON.stringify(response.data.columnist))
         Api.defaults.headers.authtoken = `${response.data.token}`;
+        setUser(response.data.columnist)
         setAuth(true)
       } catch (error) {
         return error
@@ -31,8 +34,10 @@ function AuthProvider({ children }) {
           email: email,
           password: password
         })
-        console.log(response);
         localStorage.setItem("in-token", JSON.stringify(response.data.token))
+        localStorage.setItem("in-user", JSON.stringify(response.data.user))
+        Api.defaults.headers.authtoken = `${response.data.token}`;
+        setUser(response.data.user)
         setAuth(true)
       } catch (error) {
         return error
@@ -40,8 +45,32 @@ function AuthProvider({ children }) {
     }
   }
 
+  function handleLogOut() {
+    setAuth(false)
+    localStorage.removeItem("in-token")
+    localStorage.removeItem("in-user")
+    Api.defaults.headers.authtoken = undefined
+  }
+
+  useEffect(() => {
+    //console.log(auth, loading);
+    const token = localStorage.getItem('in-token')
+    setUser(JSON.parse(localStorage.getItem('in-user')))
+    
+    if (token) {
+      Api.defaults.headers.authtoken = `${JSON.parse(token)}`
+      setAuth(true)
+    }
+    setLoading(false)
+  }, []);
+
+  
+  if (loading) {
+    return <Loading/>
+  }
+
   return (
-    <Context.Provider value={{ auth, handleLogin }}>
+    <Context.Provider value={{ auth, handleLogin,handleLogOut, loading, user }}>
       {children}
     </Context.Provider>
   )

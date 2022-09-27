@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Article from './pages/Article';
-import Loading from './pages/LoadingScreen';
-import Login from './pages/Login';
-import Menu from './pages/Menu';
-import Register from './pages/Register'
+import Article from '../pages/Article';
+import Loading from '../pages/LoadingScreen';
+import Login from '../pages/Login';
+import Menu from '../pages/Menu';
+import Register from '../pages/Register'
 
 const Routing = () => (
   <Router>
