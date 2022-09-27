@@ -1,5 +1,4 @@
 import { Fragment, useContext, useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom';
 import Header from '../../components/header';
 import MenuMainSection from '../../components/menuMainSection';
 import { Context } from '../../contexts/AuthContext';
@@ -8,7 +7,7 @@ import './style.css'
 
 function Menu() {
 
-  const { auth, loading, handleLogOut } = useContext(Context)
+  const { loading, handleLogOut } = useContext(Context)
   const [articlesArray, setArticlesArray] = useState([])
   
   useEffect(() => {
@@ -24,10 +23,6 @@ function Menu() {
       getArticles()
     }
   }, [loading])
-  
-  if (auth === false) {
-    return <Navigate to='/login' />
-  }
 
   return ( 
     <Fragment>
