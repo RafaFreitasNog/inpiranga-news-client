@@ -30,6 +30,8 @@ function Menu() {
       <div id='menu-conteiner'>
         <MenuMainSection 
         articlesArray= {articlesArray}/>
+        <MenuMainSection 
+        articlesArray= {articlesArray}/>
       </div>
     </Fragment>
    );

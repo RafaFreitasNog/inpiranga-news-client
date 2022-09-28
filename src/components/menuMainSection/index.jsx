@@ -1,5 +1,4 @@
 import { Fragment } from 'react';
-import DivisionLine from '../../assets/divisionLine';
 import NewsCard from '../../assets/newsCard';
 import './style.css'
 
@@ -16,9 +15,8 @@ function MenuMainSection(props) {
           title={element.title}
           subtitle={element.subtitle}
           text={element.text}
-          author={element.author} />
+          author={element.author[0].name} />
         )}
-        <DivisionLine text="show more"/>
       </div>     
     </Fragment>
    );
