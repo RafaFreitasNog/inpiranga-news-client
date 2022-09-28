@@ -7,7 +7,7 @@ import './style.css'
 
 function Menu() {
 
-  const { loading, handleLogOut } = useContext(Context)
+  const { loading } = useContext(Context)
   const [articlesArray, setArticlesArray] = useState([])
   
   useEffect(() => {
@@ -30,7 +30,6 @@ function Menu() {
       <div id='menu-conteiner'>
         <MenuMainSection 
         articlesArray= {articlesArray}/>
-        <button onClick={handleLogOut}>oi</button>
       </div>
     </Fragment>
    );

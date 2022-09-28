@@ -1,6 +1,6 @@
 import { Fragment, useContext, useEffect, useState } from 'react';
 import './style.css'
-import { IoMenuSharp, IoPersonSharp } from "react-icons/io5";
+import { IoMenuSharp, IoPersonCircleSharp, IoCaretDownOutline } from "react-icons/io5";
 import { Context } from '../../contexts/AuthContext';
 import DropdownMenu from '../../assets/dropdownMenu';
 
@@ -36,8 +36,9 @@ function Header(props) {
           </div>
           <div id='header-right'>
             <div id='header-profile-conteiner' onClick={handleDropdownClick}>
-              <IoPersonSharp id='header-profile-icon' className='white'/>
+              <IoPersonCircleSharp id='header-profile-icon' className='white'/>
               <p id='header-profile-label' className='upper small white'>{name}</p>
+              <IoCaretDownOutline id='header-dropdown-icon' className='white'/>
             </div>
           </div>
         </div>

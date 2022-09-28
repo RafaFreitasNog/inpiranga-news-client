@@ -45,7 +45,7 @@ function AuthProvider({ children }) {
     }
   }
 
-  function handleLogOut() {
+  function handleLogout() {
     setAuth(false)
     localStorage.removeItem("in-token")
     localStorage.removeItem("in-user")
@@ -70,7 +70,7 @@ function AuthProvider({ children }) {
   }
 
   return (
-    <Context.Provider value={{ auth, handleLogin,handleLogOut, loading, user }}>
+    <Context.Provider value={{ auth, handleLogin, handleLogout, loading, user }}>
       {children}
     </Context.Provider>
   )
