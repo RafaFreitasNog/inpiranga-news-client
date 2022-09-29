@@ -102,6 +102,9 @@ p.italic, h1.italic, h2.italic, h3.italic, h4.italic, h5.italic, h6.italic {
 p.upper, h1.upper, h2.upper, h3.upper, h4.upper, h5.upper, h6.upper {
   text-transform: uppercase;
 }
+p.thin, h1.thin, h2.thin, h3.thin, h4.thin, h5.thin, h6.thin {
+  font-weight: 200;
+}
 p.white, h1.white, h2.white, h3.white, h4.white, h5.white, h6.white, svg.white {
   color: var(--gray-1);
 }
@@ -129,4 +132,5 @@ button.blue2 {
 button.blue3 {
   background-color: var(--blue-3);
 }
+
 

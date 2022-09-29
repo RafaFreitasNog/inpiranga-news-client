@@ -1,10 +1,10 @@
 import { Fragment } from 'react';
 import './style.css'
-import InputTextLabel from '../../assets/inputTextLabel';
-import Button from '../../assets/button';
-import DivisionLine from '../../assets/divisionLine';
+import InputTextLabel from '../../Assets/inputTextLabel';
+import Button from '../../Assets/button';
+import DivisionLine from '../../Assets/divisionLine';
 import { Link } from 'react-router-dom';
-import CheckboxLabel from '../../assets/checkboxLabel';
+import CheckboxLabel from '../../Assets/checkboxLabel';
 
 function LoginArea(props) {
 

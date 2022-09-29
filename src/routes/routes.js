@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Article from '../pages/Article';
-import Loading from '../pages/LoadingScreen';
-import Login from '../pages/Login';
-import Menu from '../pages/Menu';
-import Register from '../pages/Register'
+import Article from '../Pages/Article';
+import Loading from '../Pages/LoadingScreen';
+import Login from '../Pages/Login';
+import Menu from '../Pages/Menu';
+import Register from '../Pages/Register'
+import WriteArticle from '../Pages/WriteArticle';
 import PrivateRoutes from './privateRoutes';
 
 const Routing = () => (
@@ -15,6 +16,7 @@ const Routing = () => (
       <Route element={<PrivateRoutes/>} >
         <Route path='/menu' element={<Menu/>} />
         <Route path='/article' element={<Article/>} />
+        <Route path='/writearticle' element={<WriteArticle/>} />
       </Route>
     </Routes>
   </Router>

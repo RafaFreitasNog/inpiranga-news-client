@@ -3,13 +3,25 @@
 }
 #article-section-title-conteiner {
   grid-column: 2 / 12;
-  border-bottom: 2px solid var(--gray-5);
+  border-bottom: 1px solid var(--gray-5);
 }
 #article-section-subtitle {
   color: var(--gray-6);
-  margin: 24px 0 24px 0;
+  margin: 32px 0 32px 0;
+  padding-right: 24px;
 }
 #article-section-author-info{
   color: var(--blue-2);
-  margin: 24px 0 24px 0;
+  margin: 24px 0 12px 0;
+}
+#article-section-body-conteiner {
+  grid-column: 3 / 11;
+  margin-top: 64px;
+}
+#article-section-text {
+  color: var(--gray-6);
+}
+#article-section-time-info {
+  margin: 12px 0 32px 0;
+  color: var(--gray-6);
 }

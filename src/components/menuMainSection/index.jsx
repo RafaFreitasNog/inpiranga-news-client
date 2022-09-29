@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { useNavigate } from 'react-router-dom';
-import NewsCard from '../../assets/newsCard';
+import NewsCard from '../../Assets/newsCard';
 import './style.css'
 
 function MenuMainSection(props) {

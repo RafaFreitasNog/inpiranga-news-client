@@ -1,6 +1,6 @@
 import { Fragment, useContext } from 'react';
 import { IoLogOutSharp, IoPersonOutline, IoHeartOutline } from "react-icons/io5";
-import { Context } from '../../contexts/AuthContext';
+import { Context } from '../../Contexts/AuthContext';
 import './style.css'
 
 function DropdownMenu(props) {

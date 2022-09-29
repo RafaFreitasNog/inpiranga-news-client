@@ -1,9 +1,9 @@
 import { Fragment, useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import ArticleSection from '../../components/articleSection';
-import Header from '../../components/header';
-import { Context } from '../../contexts/AuthContext';
-import ArticleService from '../../services/article';
+import ArticleSection from '../../Components/articleSection';
+import Header from '../../Components/header';
+import { Context } from '../../Contexts/AuthContext';
+import ArticleService from '../../Services/article';
 import './style.css'
 
 function Article(props) {
@@ -19,7 +19,6 @@ function Article(props) {
       try {
         const response = await ArticleService.getOne(articleId)
         setArticle(response.data[0])
-        console.log(response.data[0])
       } catch (error) {
         console.log(error);
       }

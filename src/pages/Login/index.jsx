@@ -1,7 +1,7 @@
 import { Fragment, useContext, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import LoginArea from '../../components/loginSection';
-import { Context } from '../../contexts/AuthContext';
+import LoginArea from '../../Components/loginSection';
+import { Context } from '../../Contexts/AuthContext';
 import './style.css'
 
 function Login() {

@@ -1,9 +1,9 @@
 import { Fragment, useContext, useEffect, useState } from 'react';
 import './style.css'
 import { IoMenuSharp, IoPersonCircleSharp, IoCaretDownOutline } from "react-icons/io5";
-import { Context } from '../../contexts/AuthContext';
-import DropdownMenu from '../../assets/dropdownMenu';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Context } from '../../Contexts/AuthContext';
+import DropdownMenu from '../../Assets/dropdownMenu';
+import { useNavigate } from 'react-router-dom';
 
 function Header(props) {
 

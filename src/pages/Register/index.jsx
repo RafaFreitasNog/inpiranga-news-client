@@ -1,8 +1,8 @@
 import { Fragment, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import RegisterSection from '../../components/registerSection';
-import ColumnistService from '../../services/columnist';
-import UserService from '../../services/user';
+import RegisterSection from '../../Components/registerSection';
+import ColumnistService from '../../Services/columnist';
+import UserService from '../../Services/user';
 import './style.css'
 
 

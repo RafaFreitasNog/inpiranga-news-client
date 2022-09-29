@@ -1,8 +1,8 @@
 import { createContext, useEffect, useState } from "react";
-import Loading from "../pages/LoadingScreen";
-import Api from "../services/api";
-import ColumnistService from "../services/columnist";
-import UserService from "../services/user";
+import Loading from "../Pages/LoadingScreen";
+import Api from "../Services/api";
+import ColumnistService from "../Services/columnist";
+import UserService from "../Services/user";
 
 const Context = createContext();
 

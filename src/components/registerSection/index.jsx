@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../../assets/button';
-import CheckboxLabel from '../../assets/checkboxLabel';
-import DivisionLine from '../../assets/divisionLine';
-import InputTextLabel from '../../assets/inputTextLabel';
+import Button from '../../Assets/button';
+import CheckboxLabel from '../../Assets/checkboxLabel';
+import DivisionLine from '../../Assets/divisionLine';
+import InputTextLabel from '../../Assets/inputTextLabel';
 import './style.css'
 
 function RegisterSection(props) {
