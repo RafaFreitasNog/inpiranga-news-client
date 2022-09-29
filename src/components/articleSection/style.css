@@ -1,0 +1,15 @@
+#article-section-conteiner {
+  margin-top: 64px;
+}
+#article-section-title-conteiner {
+  grid-column: 2 / 12;
+  border-bottom: 2px solid var(--gray-5);
+}
+#article-section-subtitle {
+  color: var(--gray-6);
+  margin: 24px 0 24px 0;
+}
+#article-section-author-info{
+  color: var(--blue-2);
+  margin: 24px 0 24px 0;
+}

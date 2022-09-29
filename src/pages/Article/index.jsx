@@ -1,19 +1,44 @@
-import { useContext } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Fragment, useContext, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import ArticleSection from '../../components/articleSection';
+import Header from '../../components/header';
 import { Context } from '../../contexts/AuthContext';
+import ArticleService from '../../services/article';
 import './style.css'
 
 function Article(props) {
 
-  const { auth } = useContext(Context)
+  const { loading } = useContext(Context)
+  const { state } = useLocation();
+  const { articleId } = state
+  const [article, setArticle] = useState()
+  const [articleLoaded, setArticleLoaded] = useState(false)
 
-  if (auth === false) {
-    return <Navigate to='/login' />
-  }  
+  useEffect(() => {
+    async function getArticle() {
+      try {
+        const response = await ArticleService.getOne(articleId)
+        setArticle(response.data[0])
+        console.log(response.data[0])
+      } catch (error) {
+        console.log(error);
+      }
+      setArticleLoaded(true)
+    }
+    
+    if (loading === false) {
+      getArticle()
+    }
+  }, [loading, articleId]);
 
   return ( 
-    <h1>Hello, Article</h1>
+    <Fragment>
+      <Header/>
+      {articleLoaded && 
+      <ArticleSection
+      article={article}/> }
+    </Fragment>
    );
-}
-
-export default Article;
+  }
+  
+  export default Article;

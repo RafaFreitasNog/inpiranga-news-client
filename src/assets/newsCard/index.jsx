@@ -5,7 +5,7 @@ import { IoNewspaperSharp } from "react-icons/io5";
 function NewsCard(props) {
   return ( 
     <Fragment>
-      <div className='news-card-conteiner'>
+      <div className='news-card-conteiner' onClick={() => props.handleCardClick(props.id)}>
         <div className='news-card-title-conteiner'>
           <h5 className='bold news-card-text news-card-title' ><IoNewspaperSharp className='news-title-icon'/>{props.title}</h5>
         </div>

@@ -29,6 +29,10 @@
   margin: 0 8px 0 0;
 }
 
+#header-logo {
+  cursor: pointer;
+}
+
 #header-profile-conteiner{
   display: flex;
   align-items: center;

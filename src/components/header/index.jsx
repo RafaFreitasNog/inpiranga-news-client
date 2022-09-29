@@ -3,16 +3,22 @@ import './style.css'
 import { IoMenuSharp, IoPersonCircleSharp, IoCaretDownOutline } from "react-icons/io5";
 import { Context } from '../../contexts/AuthContext';
 import DropdownMenu from '../../assets/dropdownMenu';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function Header(props) {
 
-  const { user, loading } = useContext(Context)
+  const { user, loading } = useContext(Context);
+  const navigate = useNavigate();
 
-  const [name, setName] = useState('')
-  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [name, setName] = useState('');
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   function handleDropdownClick() {
     setDropdownOpen(!dropdownOpen)
+  }
+
+  function handleLogoClick() {
+    navigate('/menu')
   }
 
   useEffect(() => {
@@ -32,7 +38,7 @@ function Header(props) {
             </div>
           </div>
           <div id='header-center'>
-            <h5 className='bold white upper'>Ipiranga News</h5>
+            <h5 id='header-logo' className='bold white upper' onClick={handleLogoClick}>Ipiranga News</h5>
           </div>
           <div id='header-right'>
             <div id='header-profile-conteiner' onClick={handleDropdownClick}>
