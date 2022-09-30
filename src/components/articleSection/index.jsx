@@ -12,10 +12,11 @@ function ArticleSection(props) {
           <h6 id='article-section-subtitle'>{props.article.subtitle}</h6>
           <p id='article-section-author-info' className='bold'>By {props.article.author[0].name}, Ipiranga News</p>
           <p id='article-section-time-info' className='small italic'>Published {moment(props.article.created_at).format('ll')}, updated {moment(props.article.created_at).fromNow()}</p>
+          { props.isOwner && <p>Yours</p>}
         </div>
         <div></div>
         <div id="article-section-body-conteiner">
-          <h6 id='article-section-text' className=''>{props.article.text}</h6>
+          <div dangerouslySetInnerHTML={{__html: props.article.text}} id="article-section-text" />
         </div>
       </div>
     </Fragment>

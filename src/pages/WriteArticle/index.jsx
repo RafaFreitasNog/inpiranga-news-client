@@ -3,6 +3,7 @@ import Header from '../../Components/header';
 import Editor from 'ckeditor5-custom-build/build/ckeditor';
 import { CKEditor } from '@ckeditor/ckeditor5-react'
 import './style.css'
+import ArticleService from '../../Services/article';
 
 function WriteArticle() {
 
@@ -18,6 +19,19 @@ function WriteArticle() {
   }
   function handleTextChange(e, editor) {
     setText(editor.getData())
+  }
+
+  async function handleSubmit() {
+    try {
+      const response = await ArticleService.post({
+        title: title,
+        subtitle: subtitle,
+        text: text
+      })
+      console.log(response)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return ( 
@@ -41,7 +55,7 @@ function WriteArticle() {
             onChange={handleTextChange}
             />
         </div>
-        <button id='write-page-submit-button' className='button-asset'>Submit</button>
+        <button id='write-page-submit-button' className='button-asset' onClick={handleSubmit}>Submit</button>
       </div>
     </Fragment>
    );

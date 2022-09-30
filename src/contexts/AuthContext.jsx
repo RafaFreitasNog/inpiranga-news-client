@@ -11,6 +11,7 @@ function AuthProvider({ children }) {
   const [auth, setAuth] = useState(false);
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(true);
+  const [isColumnist, setIsColumnist] = useState(false);
 
 
   async function handleLogin(email, password, isColumnist) {
@@ -20,10 +21,14 @@ function AuthProvider({ children }) {
           email: email,
           password: password
         })
+        // put in localStorage
         localStorage.setItem("in-token", JSON.stringify(response.data.token))
         localStorage.setItem("in-user", JSON.stringify(response.data.columnist))
+        // set default header
         Api.defaults.headers.authtoken = `${response.data.token}`;
+        // set states
         setUser(response.data.columnist)
+        setIsColumnist(response.data.columnist.columnist)
         setAuth(true)
       } catch (error) {
         return error
@@ -34,10 +39,14 @@ function AuthProvider({ children }) {
           email: email,
           password: password
         })
+        // put in localStorage
         localStorage.setItem("in-token", JSON.stringify(response.data.token))
         localStorage.setItem("in-user", JSON.stringify(response.data.user))
+        // set default header
         Api.defaults.headers.authtoken = `${response.data.token}`;
+        // set states
         setUser(response.data.user)
+        setIsColumnist(response.data.user.columnist)
         setAuth(true)
       } catch (error) {
         return error
@@ -53,9 +62,11 @@ function AuthProvider({ children }) {
   }
 
   useEffect(() => {
-    //console.log(auth, loading);
+    // rehidrate
     const token = localStorage.getItem('in-token')
-    setUser(JSON.parse(localStorage.getItem('in-user')))
+    const userInStorage = JSON.parse(localStorage.getItem('in-user'))
+    setUser(userInStorage)
+    setIsColumnist(userInStorage.columnist)
     
     if (token) {
       Api.defaults.headers.authtoken = `${JSON.parse(token)}`
@@ -70,7 +81,7 @@ function AuthProvider({ children }) {
   }
 
   return (
-    <Context.Provider value={{ auth, handleLogin, handleLogout, loading, user }}>
+    <Context.Provider value={{ auth, handleLogin, handleLogout, loading, user, isColumnist }}>
       {children}
     </Context.Provider>
   )

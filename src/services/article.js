@@ -8,6 +8,10 @@ const ArticleService = {
   getOne: async (articleId) => {
     const response = await Api.get(`/articles/${articleId}`)
     return response
+  },
+  post: async (params) => {
+    const response = await Api.post('/articles/', params);
+    return response
   }
 }
 

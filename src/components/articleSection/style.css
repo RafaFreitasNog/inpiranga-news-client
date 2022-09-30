@@ -18,8 +18,13 @@
   grid-column: 3 / 11;
   margin-top: 64px;
 }
-#article-section-text {
+#article-section-text p{
   color: var(--gray-6);
+  margin: 40px 0 40px 0;
+  font-size: 24px;
+}
+#article-section-text strong{
+  color: var(--blue-2)
 }
 #article-section-time-info {
   margin: 12px 0 32px 0;

@@ -8,17 +8,25 @@ import './style.css'
 
 function Article(props) {
 
-  const { loading } = useContext(Context)
   const { state } = useLocation();
   const { articleId } = state
+  const { loading, user } = useContext(Context)
   const [article, setArticle] = useState()
   const [articleLoaded, setArticleLoaded] = useState(false)
+  const [isOwner, setIsOwner] = useState(false)
 
   useEffect(() => {
     async function getArticle() {
       try {
         const response = await ArticleService.getOne(articleId)
         setArticle(response.data[0])
+        // check if it is owner
+        const articleAuthorId = response.data[0].author[0]._id
+        const userId = user._id
+        if (articleAuthorId === userId) {
+          setIsOwner(true)
+          console.log("is owner")
+        }
       } catch (error) {
         console.log(error);
       }
@@ -28,14 +36,15 @@ function Article(props) {
     if (loading === false) {
       getArticle()
     }
-  }, [loading, articleId]);
+  }, [loading, articleId, user]);
 
   return ( 
     <Fragment>
       <Header/>
       {articleLoaded && 
       <ArticleSection
-      article={article}/> }
+      article={article}
+      isOwner={isOwner}/> }
     </Fragment>
    );
   }

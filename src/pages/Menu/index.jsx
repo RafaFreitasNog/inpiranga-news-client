@@ -9,9 +9,8 @@ import './style.css'
 
 function Menu() {
 
-  const { loading, user } = useContext(Context)
+  const { loading, isColumnist } = useContext(Context)
   const [articlesArray, setArticlesArray] = useState([])
-  const [isColumnist, setIsColumnist] = useState(false)
   
   useEffect(() => {
     async function getArticles() {
@@ -24,11 +23,8 @@ function Menu() {
     }
     if (loading === false) {
       getArticles()
-      console.log(user);
-      setIsColumnist(user.columnist)
     }
   }, [loading])
-
 
   return ( 
     <Fragment>
