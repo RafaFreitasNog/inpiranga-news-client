@@ -15,3 +15,15 @@
   margin-right: 4px;
   font-size: 16px;
 }
+#menu-hero-section {
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+#menu-hero {
+  grid-column: 1 / 13;
+  height: 280px;
+  background-image: url('../../../imgs/museu-1.png');
+  background-size: 100%;
+  background-color: var(--blue-2);
+  background-position: 0px -120px;
+}

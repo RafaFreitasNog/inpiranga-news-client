@@ -12,6 +12,9 @@
   --blue-1: #00BBEF;
   --blue-2: #195F72;
   --blue-3: #0B3C49;
+
+  --yellow: #ffb703;
+  --orange: #fb8500;
 }
 
 body {
@@ -107,6 +110,9 @@ p.thin, h1.thin, h2.thin, h3.thin, h4.thin, h5.thin, h6.thin {
 }
 p.white, h1.white, h2.white, h3.white, h4.white, h5.white, h6.white, svg.white {
   color: var(--gray-1);
+}
+svg {
+  color: var(--gray-9);
 }
 label {
   font-family: 'Bitter', serif;

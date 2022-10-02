@@ -1,11 +1,11 @@
 import { Fragment, useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../../Components/header';
 import MenuMainSection from '../../Components/menuMainSection';
 import { Context } from '../../Contexts/AuthContext';
 import ArticleService from '../../Services/article';
 import { IoAddCircleSharp } from 'react-icons/io5'
 import './style.css'
+import HeaderBig from '../../Components/headerBig';
 
 function Menu() {
 
@@ -28,13 +28,16 @@ function Menu() {
 
   return ( 
     <Fragment>
-      <Header/>
+      <HeaderBig/>
       <div id='menu-conteiner'>
+        <div id='menu-hero-section' className='grid1200'>
+          <div id='menu-hero'></div>
+        </div>
         <MenuMainSection 
         articlesArray= {articlesArray}/>
         <div id="menu-button-section" className='grid1200'>
           <Link id='menu-button-conteiner' to="/writearticle">
-            {isColumnist && <button className='button-asset'> <IoAddCircleSharp id='menu-add-icon' /> Write New</button> }
+            {isColumnist && <button className='button-asset'> <IoAddCircleSharp id='menu-add-icon' className='white'/> Write New</button> }
           </Link>
         </div>
       </div>
