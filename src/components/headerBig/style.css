@@ -5,7 +5,7 @@
 #header-big-content-conteiner {
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
   margin: 0 64px 0 64px;
 }

@@ -12,7 +12,7 @@
 }
 #article-section-author-info{
   color: var(--blue-2);
-  margin: 24px 0 12px 0;
+  margin: 0 0 12px 0;
 }
 #article-section-body-conteiner {
   grid-column: 3 / 11;
@@ -27,6 +27,13 @@
   color: var(--blue-2)
 }
 #article-section-time-info {
-  margin: 12px 0 32px 0;
+  margin: 12px 0 0 0;
   color: var(--gray-6);
+}
+#article-section-info-icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 24px 0 32px 0;
 }
