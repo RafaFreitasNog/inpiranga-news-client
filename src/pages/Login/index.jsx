@@ -15,7 +15,7 @@ function Login() {
   const [error, setError] = useState('')
   
   if (auth) {
-    return <Navigate to="/menu" />
+    return <Navigate to="/" />
   }
 
   const HandleSubmit = async (evt) => {

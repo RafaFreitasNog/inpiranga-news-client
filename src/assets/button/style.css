@@ -6,9 +6,6 @@
   border-radius: 4px;
   transition: 0.3s;
   text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .button-asset:hover {

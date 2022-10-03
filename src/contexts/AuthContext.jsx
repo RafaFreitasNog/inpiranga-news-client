@@ -65,10 +65,10 @@ function AuthProvider({ children }) {
     // rehidrate
     const token = localStorage.getItem('in-token')
     const userInStorage = JSON.parse(localStorage.getItem('in-user'))
-    setUser(userInStorage)
-    setIsColumnist(userInStorage.columnist)
     
     if (token) {
+      setUser(userInStorage)
+      setIsColumnist(userInStorage.columnist)
       Api.defaults.headers.authtoken = `${JSON.parse(token)}`
       setAuth(true)
     }

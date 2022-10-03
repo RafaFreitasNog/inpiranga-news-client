@@ -15,6 +15,7 @@
 
   --yellow: #ffb703;
   --orange: #fb8500;
+  --red: #bf0603;
 }
 
 body {
@@ -130,7 +131,10 @@ button {
   font-size: 16px;
   font-weight: 400;
   line-height: 110%;
-  text-transform: capitalize;
+  text-transform: uppercase;
+}
+button.none {
+  text-transform: none;
 }
 button.blue2 {
   background-color: var(--blue-2);

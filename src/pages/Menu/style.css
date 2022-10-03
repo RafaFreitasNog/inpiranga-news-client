@@ -17,7 +17,7 @@
 }
 #menu-hero-section {
   margin-top: 64px;
-  margin-bottom: 64px;
+  margin-bottom: 32px;
 }
 #menu-hero {
   grid-column: 1 / 13;
@@ -26,4 +26,16 @@
   background-size: 100%;
   background-color: var(--blue-2);
   background-position: 0px -120px;
+}
+.menu-button-write {
+  height: 40px;
+  width: 100%;
+  background-color: var(--blue-2);
+  color: var(--gray-1);
+  border-radius: 4px;
+  transition: 0.3s;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

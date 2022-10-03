@@ -4,7 +4,9 @@ import './style.css'
 function Button(props) {
   return ( 
     <Fragment>
-      <button className='button-asset'>{props.text}</button>
+      <button style={{
+        width: `${props.width}`,
+        backgroundColor: `${props.color}`}} className='button-asset'>{props.text}</button>
     </Fragment>
    );
 }

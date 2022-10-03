@@ -12,6 +12,10 @@ const ArticleService = {
   post: async (params) => {
     const response = await Api.post('/articles/', params);
     return response
+  },
+  delete: async (articleId) => {
+    const response = await Api.delete(`/articles/${articleId}`)
+    return response
   }
 }
 

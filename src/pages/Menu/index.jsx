@@ -37,7 +37,7 @@ function Menu() {
         articlesArray= {articlesArray}/>
         <div id="menu-button-section" className='grid1200'>
           <Link id='menu-button-conteiner' to="/writearticle">
-            {isColumnist && <button className='button-asset'> <IoAddCircleSharp id='menu-add-icon' className='white'/> Write New</button> }
+            {isColumnist && <button className='menu-button-write'> <IoAddCircleSharp id='menu-add-icon' className='white'/> Write New</button> }
           </Link>
         </div>
       </div>

@@ -18,7 +18,7 @@ function HeaderBig(props) {
   }
 
   function handleLogoClick() {
-    navigate('/menu')
+    navigate('/')
   }
 
   useEffect(() => {

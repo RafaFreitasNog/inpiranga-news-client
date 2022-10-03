@@ -1,0 +1,26 @@
+.article-delete-edit-buttons {
+  border-radius: 4px;
+  margin-left: 8px;
+  min-width: 32px;
+  min-height: 32px;
+}
+#article-edit-button {
+  background-color: var(--gray-5);
+  padding: 0 6px 0 6px;
+  color: var(--gray-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#article-delete-button {
+  background-color: var(--red);
+}
+#edit-delete-buttons-conteiner {
+  display: flex;
+}
+.edit-section-icons {
+  color: var(--gray-1);
+}
+#edit-pencil-icon {
+  margin-right: 4px;
+}

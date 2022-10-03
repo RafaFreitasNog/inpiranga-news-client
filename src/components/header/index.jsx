@@ -18,7 +18,7 @@ function Header(props) {
   }
 
   function handleLogoClick() {
-    navigate('/menu')
+    navigate('/')
   }
 
   useEffect(() => {

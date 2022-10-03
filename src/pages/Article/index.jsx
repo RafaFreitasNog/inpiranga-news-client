@@ -25,7 +25,6 @@ function Article(props) {
         const userId = user._id
         if (articleAuthorId === userId) {
           setIsOwner(true)
-          console.log("is owner")
         }
       } catch (error) {
         console.log(error);
