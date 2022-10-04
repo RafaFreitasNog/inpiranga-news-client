@@ -4,12 +4,14 @@ import Editor from 'ckeditor5-custom-build/build/ckeditor';
 import { CKEditor } from '@ckeditor/ckeditor5-react'
 import './style.css'
 import ArticleService from '../../Services/article';
+import { useNavigate } from 'react-router-dom';
 
 function WriteArticle() {
 
   const [title, setTitle] = useState('');
   const [subtitle, setSubtitle] = useState('');
   const [text, setText] = useState('');
+  const navigate = useNavigate();
 
   function handleTitleChange(value) {
     setTitle(value)
@@ -28,6 +30,7 @@ function WriteArticle() {
         subtitle: subtitle,
         text: text
       })
+      navigate('/')
       console.log(response)
     } catch (error) {
       console.log(error)
@@ -41,9 +44,9 @@ function WriteArticle() {
         <h3 id='write-page-title'>White Your Article!</h3>
         <div id='write-title-input-conteiner' className='write-page-divs'>
           <h6 className='write-page-text'>Title</h6>
-          <textarea name="title-input" id="write-title-input" onChange={(e) => {handleTitleChange(e.target.value)}}></textarea>
+          <textarea name="title-input" className="write-article-textarea" onChange={(e) => {handleTitleChange(e.target.value)}}></textarea>
           <h6 className='write-page-text'>Subtitle</h6>
-          <textarea name="subtitle-input" id="write-subtitle-input" onChange={(e) => {handleSubtitleChange(e.target.value)}}></textarea>
+          <textarea name="subtitle-input" className="write-article-textarea" onChange={(e) => {handleSubtitleChange(e.target.value)}}></textarea>
           <h6 className='write-page-text'>Text</h6>
         </div>
         <div className='write-page-divs'>
@@ -55,7 +58,7 @@ function WriteArticle() {
             onChange={handleTextChange}
             />
         </div>
-        <button id='write-page-submit-button' className='button-asset' onClick={handleSubmit}>Submit</button>
+        <button id='write-page-submit-button' onClick={handleSubmit}>post article</button>
       </div>
     </Fragment>
    );

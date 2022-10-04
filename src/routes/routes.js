@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Article from '../Pages/Article';
+import EditArticle from '../Pages/EditArticle';
 import Loading from '../Pages/LoadingScreen';
 import Login from '../Pages/Login';
 import Menu from '../Pages/Menu';
@@ -17,6 +18,7 @@ const Routing = () => (
         <Route path='/' element={<Menu/>} />
         <Route path='/article' element={<Article/>} />
         <Route path='/writearticle' element={<WriteArticle/>} />
+        <Route path='/editarticle' element={<EditArticle/>} />
       </Route>
     </Routes>
   </Router>

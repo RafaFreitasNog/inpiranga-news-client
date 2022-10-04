@@ -1,26 +1,25 @@
 .article-delete-edit-buttons {
-  border-radius: 4px;
+  border-radius: 6px;
   margin-left: 8px;
   min-width: 32px;
-  min-height: 32px;
-}
-#article-edit-button {
-  background-color: var(--gray-5);
+  min-height: 32px; text-transform: capitalize;
   padding: 0 6px 0 6px;
   color: var(--gray-1);
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 2px 2px 6px var(--gray-5);
+}
+#article-edit-button {
+  background-color: var(--blue-2);
 }
 #article-delete-button {
-  background-color: var(--red);
+  background-color: var(--red-1);
 }
 #edit-delete-buttons-conteiner {
   display: flex;
 }
 .edit-section-icons {
   color: var(--gray-1);
-}
-#edit-pencil-icon {
   margin-right: 4px;
 }

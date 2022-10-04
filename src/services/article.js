@@ -13,6 +13,10 @@ const ArticleService = {
     const response = await Api.post('/articles/', params);
     return response
   },
+  put: async (articleId, params) => {
+    const response = await Api.put(`/articles/${articleId}`, params);
+    return response
+  },
   delete: async (articleId) => {
     const response = await Api.delete(`/articles/${articleId}`)
     return response

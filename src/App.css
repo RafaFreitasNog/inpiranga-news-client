@@ -15,7 +15,14 @@
 
   --yellow: #ffb703;
   --orange: #fb8500;
-  --red: #bf0603;
+
+  --red-1: #ff4747;
+  --red-2: #ff0f0f;
+  --red-3: #ce0000;
+
+  --green-1: #9ee37d;
+  --green-2: #63c132;
+  --green-3: #358600;
 }
 
 body {

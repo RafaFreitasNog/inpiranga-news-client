@@ -9,6 +9,10 @@ function ArticleSection(props) {
 
   const navigate = useNavigate();
 
+  function handleEditButtonClick() {
+    navigate('/editarticle', { state: { articleId: props.article._id } });
+  }
+
   async function handleDeleteButtonClick() {
     try {
       const response = await ArticleService.delete(props.article._id)
@@ -18,6 +22,7 @@ function ArticleSection(props) {
       console.log(error);
     }
   }
+  console.log(props.article);
 
   return ( 
     <Fragment>
@@ -30,7 +35,9 @@ function ArticleSection(props) {
               <p id='article-section-author-info' className='bold'>By {props.article.author[0].name}, Ipiranga News</p>
               <p id='article-section-time-info' className='small italic'>Published {moment(props.article.created_at).format('ll')}, updated {moment(props.article.created_at).fromNow()}</p>
             </div>
-            { props.isOwner && <EditButtons deleteClick={handleDeleteButtonClick} /> }
+            { props.isOwner && <EditButtons 
+                                deleteClick={handleDeleteButtonClick} 
+                                editClick={handleEditButtonClick}  /> }
           </div>
         </div>
         <div></div>
