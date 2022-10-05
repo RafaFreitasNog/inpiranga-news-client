@@ -37,3 +37,6 @@
   align-items: flex-end;
   margin: 24px 0 32px 0;
 }
+#columnist-profile-link {
+  color: var(--blue-2);
+}
