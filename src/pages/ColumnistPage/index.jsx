@@ -10,7 +10,7 @@ import ArticleService from '../../Services/article';
 import ColumnistService from '../../Services/columnist';
 import './style.css'
 
-function ProfilePage(props) {
+function ColumnistPage(props) {
 
   const location = useLocation()
   const { columnistId } = location.state
@@ -43,8 +43,6 @@ function ProfilePage(props) {
       fetchData()
     }
   }, [columnistId, loading, user]);
-
-  console.log(isColumnist);
 
   return ( 
     <Fragment>
@@ -82,4 +80,4 @@ function ProfilePage(props) {
    );
 }
 
-export default ProfilePage;
+export default ColumnistPage;
