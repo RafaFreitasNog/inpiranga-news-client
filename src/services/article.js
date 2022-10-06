@@ -9,6 +9,10 @@ const ArticleService = {
     const response = await Api.get(`/articles/${articleId}`)
     return response
   },
+  getWrittenBy: async (columnistId) => {
+    const response = await Api.get(`/articles/writtenby/${columnistId}`)
+    return response
+  },
   post: async (params) => {
     const response = await Api.post('/articles/', params);
     return response

@@ -34,7 +34,7 @@ function Menu() {
   return ( 
     <Fragment>
       {fetching ? (<Loading />) : 
-        <div>
+        <Fragment>
           <HeaderBig/>
           <div id='menu-conteiner'>
             <div id='menu-hero-section' className='grid1200'>
@@ -48,7 +48,7 @@ function Menu() {
               </Link>
             </div>
           </div>
-        </div>
+        </Fragment>
       }
     </Fragment>
    );

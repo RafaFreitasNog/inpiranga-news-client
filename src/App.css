@@ -90,14 +90,14 @@ p.small {
   font-family: 'Bitter', serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 100%;
+  line-height: 112%;
   color: var(--gray-9);
 }
 p.error {
   font-family: 'Bitter', serif;
   font-size: 12.28px;
   font-weight: 400;
-  line-height: 100%;
+  line-height: 110%;
   color: red;
 }
 p.line {

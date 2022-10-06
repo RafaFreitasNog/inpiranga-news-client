@@ -8,6 +8,10 @@ const ColumnistService = {
     localStorage.removeItem("in-user")
     localStorage.removeItem("in-token")
     return response
+  },
+  getOne: async (columnistId) => {
+    const response = await Api.get(`/columnists/${columnistId}`);
+    return response
   }
 }
 
