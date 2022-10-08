@@ -2,7 +2,7 @@ import moment from 'moment';
 import { useContext } from 'react';
 import { useState } from 'react';
 import { Fragment, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import ProfileNewsCard from '../../Assets/profileNewsCard';
 import Header from '../../Components/header';
 import { Context } from '../../Contexts/AuthContext';
@@ -12,16 +12,20 @@ import './style.css'
 
 function ColumnistPage(props) {
 
-  const location = useLocation()
+  const navigate = useNavigate();
+  const location = useLocation();
   const { columnistId } = location.state
 
-  const { loading, user } = useContext(Context)
+  const { loading, user } = useContext(Context);
 
-  const [pageUser, setPageUser] = useState()
-  const [articles, setArticles] = useState()
-  const [isOwner, setIsOwner] = useState(false)
-  const [fetching, setFetching] = useState(true)
-  const [isColumnist, setIsColumnist] = useState(false)
+  const [pageUser, setPageUser] = useState();
+  const [articles, setArticles] = useState();
+  const [isOwner, setIsOwner] = useState(false);
+  const [fetching, setFetching] = useState(true);
+
+  function HandleCardClick(id) {
+    navigate('/article', { state: { articleId: id } });
+  }
 
   useEffect(() => {
     async function fetchData() {
@@ -29,7 +33,6 @@ function ColumnistPage(props) {
         const getUser = await ColumnistService.getOne(columnistId)
         const getArticles = await ArticleService.getWrittenBy(columnistId)
         setPageUser(getUser.data)
-        setIsColumnist(getUser.data.columnist)
         setArticles(getArticles.data)
         if (user._id === getUser.data._id) {
           setIsOwner(true)
@@ -61,18 +64,19 @@ function ColumnistPage(props) {
                 <p className='small italic'>since {moment(pageUser.created_at).format('L')}</p>
               </div>
             </div>
-            {isColumnist ? <div id='profile-articles-section'>
+            <div id='profile-articles-section'>
               <h6 id='profile-articles-heading' className='bold'>Articles</h6>
               <div id='profile-articles-conteiner'>
                 {articles.map((element) =>
                   <ProfileNewsCard 
                   key={element._id}
-                  id={element.id}
+                  id={element._id}
                   subtitle={element.subtitle}
-                  title={element.title} />
+                  title={element.title} 
+                  handleCardClick={HandleCardClick} />
                 )}
               </div>
-            </div> : <p>oi</p>}
+            </div>
           </div>
         </div>
       </div>}

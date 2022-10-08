@@ -3,9 +3,10 @@ import EditButtons from '../editButtons';
 import './style.css'
 
 function ProfileNewsCard(props) {
+
   return ( 
     <Fragment>
-      <div className='profile-card-conteiner'>
+      <div className='profile-card-conteiner' onClick={() => props.handleCardClick(props.id)}>
         <div className='profile-card-title'>
           <h5 className='bold'>{props.title}</h5>
         </div>
