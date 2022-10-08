@@ -20,7 +20,7 @@ const Routing = () => (
         <Route path='/article' element={<Article/>} />
         <Route path='/writearticle' element={<WriteArticle/>} />
         <Route path='/editarticle' element={<EditArticle/>} />
-        <Route path='/profiles' element={<ColumnistPage/>} />
+        <Route path='/columnistprofile' element={<ColumnistPage/>} />
       </Route>
     </Routes>
   </Router>

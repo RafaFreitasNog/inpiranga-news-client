@@ -33,7 +33,7 @@ function ArticleSection(props) {
             <div id='article-section-info-conteiner'>
               <p id='article-section-author-info' className='bold'>
                 By <Link 
-                        to="/profiles" 
+                        to="/columnistprofile" 
                         state={{ columnistId: props.article.author[0]._id }} 
                         id='columnist-profile-link'>
                         {props.article.author[0].name}</Link>, Ipiranga News</p>
