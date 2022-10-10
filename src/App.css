@@ -139,6 +139,7 @@ button {
   font-weight: 400;
   line-height: 110%;
   text-transform: uppercase;
+  cursor: pointer;
 }
 button.none {
   text-transform: none;
