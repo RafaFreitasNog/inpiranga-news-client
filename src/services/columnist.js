@@ -9,6 +9,10 @@ const ColumnistService = {
     localStorage.removeItem("in-token")
     return response
   },
+  revalidate: async () => {
+    const response = await Api.post('/columnists/revalidate')
+    return response
+  },
   getOne: async (columnistId) => {
     const response = await Api.get(`/columnists/${columnistId}`);
     return response

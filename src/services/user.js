@@ -8,6 +8,10 @@ const UserService = {
     localStorage.removeItem("in-user")
     localStorage.removeItem("in-token")
     return response
+  },
+  revalidate: async () => {
+    const response = await Api.post('/users/revalidate')
+    return response
   }
 }
 

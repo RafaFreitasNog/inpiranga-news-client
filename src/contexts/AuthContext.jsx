@@ -63,6 +63,26 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     // rehidrate
+    async function revalidateToken() {
+      if (isColumnist) {        
+        try {
+          const response = await ColumnistService.revalidate()
+          console.log(response);
+        } catch (error) {
+          console.log(error);
+          handleLogout()
+        }
+      } else {
+        try {
+          const response = await UserService.revalidate()
+          console.log(response);
+        } catch (error) {
+          console.log(error);
+          handleLogout()
+        }
+      }
+    }
+    
     const token = localStorage.getItem('in-token')
     const userInStorage = JSON.parse(localStorage.getItem('in-user'))
     
@@ -72,6 +92,7 @@ function AuthProvider({ children }) {
       Api.defaults.headers.authtoken = `${JSON.parse(token)}`
       setAuth(true)
     }
+    revalidateToken()
     setLoading(false)
   }, []);
 
