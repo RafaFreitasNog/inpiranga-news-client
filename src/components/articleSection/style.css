@@ -40,3 +40,26 @@
 #columnist-profile-link {
   color: var(--blue-2);
 }
+#article-section-body-conteiner ul {
+  list-style-type: square;
+  list-style-position: outside;
+  font-family: 'Bitter', serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 110%;
+  color: var(--blue-2);
+  padding-left: 24px;
+}
+
+#article-section-body-conteiner ol {
+  list-style-position: outside;
+  font-family: 'Bitter', serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 110%;
+  color: var(--blue-2);
+  padding-left: 24px;
+}
+#article-section-body-conteiner li {
+  padding-left: 24px;
+}

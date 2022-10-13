@@ -8,6 +8,7 @@ import Register from '../Pages/Register'
 import WriteArticle from '../Pages/WriteArticle';
 import PrivateRoutes from './privateRoutes';
 import ColumnistPage from '../Pages/ColumnistPage';
+import ProfilePage from '../Pages/Profile';
 
 const Routing = () => (
   <Router>
@@ -21,6 +22,7 @@ const Routing = () => (
         <Route path='/writearticle' element={<WriteArticle/>} />
         <Route path='/editarticle' element={<EditArticle/>} />
         <Route path='/columnistprofile' element={<ColumnistPage/>} />
+        <Route path='/profile' element={<ProfilePage/>} />
       </Route>
     </Routes>
   </Router>

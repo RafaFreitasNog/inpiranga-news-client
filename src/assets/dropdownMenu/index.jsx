@@ -9,8 +9,12 @@ function DropdownMenu(props) {
   const { handleLogout, isColumnist, user } = useContext(Context);
   const navigate = useNavigate();
 
-  function handleProfileClick() {
+  function handleColumnistProfileClick() {
     navigate('/columnistprofile', { state: {columnistId: user._id} })
+  }
+
+  function handleUserProfileClick() {
+    navigate('/profile', { state: {userId: user._id} })
   }
 
   return ( 
@@ -18,13 +22,13 @@ function DropdownMenu(props) {
       <div className='dropdown-menu-conteiner'>
         { isColumnist && 
         <div>
-          <button className='dropdown-button' ><IoPersonOutline className='dropdown-button-icon' /><p className='small dropdown-button-text' onClick={handleProfileClick} >Profile</p></button>
+          <button className='dropdown-button' ><IoPersonOutline className='dropdown-button-icon' /><p className='small dropdown-button-text' onClick={handleColumnistProfileClick} >Profile</p></button>
         </div>
         
         }
         { isColumnist === false && 
         <div>
-          <button className='dropdown-button' ><IoPersonOutline className='dropdown-button-icon' /><p className='small dropdown-button-text'>Profile</p></button>
+          <button className='dropdown-button' ><IoPersonOutline className='dropdown-button-icon' /><p className='small dropdown-button-text' onClick={handleUserProfileClick}>Profile</p></button>
           <button className='dropdown-button' ><IoHeartOutline className='dropdown-button-icon' /><p className='small dropdown-button-text'>Favorites</p></button>
         </div>
         }
