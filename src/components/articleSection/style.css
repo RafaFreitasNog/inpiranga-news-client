@@ -63,3 +63,11 @@
 #article-section-body-conteiner li {
   padding-left: 24px;
 }
+#article-fav-icon-marked {
+  font-size: 20px;
+  color: var(--yellow);
+}
+#article-fav-icon-unmarked {
+  font-size: 20px;
+  color: var(--gray-6);
+}

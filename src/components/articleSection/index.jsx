@@ -1,6 +1,10 @@
+import { useContext, useEffect } from 'react';
+import { useState } from 'react';
 import { Fragment } from 'react';
+import { IoBookmark, IoBookmarkOutline } from 'react-icons/io5';
 import { Link, useNavigate } from 'react-router-dom';
 import EditButtons from '../../Assets/editButtons';
+import { Context } from '../../Contexts/AuthContext';
 import ArticleService from '../../Services/article';
 import './style.css'
 const moment = require('moment')
@@ -8,6 +12,8 @@ const moment = require('moment')
 function ArticleSection(props) {
 
   const navigate = useNavigate();
+  const { user } = useContext(Context);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   function handleEditButtonClick() {
     navigate('/editarticle', { state: { articleId: props.article._id } });
@@ -22,6 +28,12 @@ function ArticleSection(props) {
       console.log(error);
     }
   }
+
+  useEffect(() => {
+    if (user.favorites.includes(props.article._id)) {
+      setIsFavorite(true)
+    }
+  }, [user, props])
 
   return ( 
     <Fragment>
@@ -42,6 +54,8 @@ function ArticleSection(props) {
             { props.isOwner && <EditButtons 
                                 deleteClick={handleDeleteButtonClick} 
                                 editClick={handleEditButtonClick}  /> }
+            { (user.columnist === false && isFavorite) && <IoBookmark id='article-fav-icon-marked'/> }
+            { (user.columnist === false && isFavorite === false) && <IoBookmarkOutline id='article-fav-icon-unmarked'/> }
           </div>
         </div>
         <div></div>
