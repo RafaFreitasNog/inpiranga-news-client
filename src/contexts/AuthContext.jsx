@@ -66,6 +66,9 @@ function AuthProvider({ children }) {
       try {
         const response = await ColumnistService.revalidate()
         console.log(response);
+        setUser(response.data)
+        setIsColumnist(response.data.columnist)
+        localStorage.setItem("in-user", JSON.stringify(response.data))
       } catch (error) {
         console.log(error);
         handleLogout()
@@ -74,13 +77,14 @@ function AuthProvider({ children }) {
       try {
         const response = await UserService.revalidate()
         console.log(response);
+        setUser(response.data)
+        setIsColumnist(response.data.columnist)
+        localStorage.setItem("in-user", JSON.stringify(response.data))
       } catch (error) {
         console.log(error);
         handleLogout()
       }
     }
-    setUser(user)
-    setIsColumnist(user.columnist)
     setAuth(true)
   }
 
