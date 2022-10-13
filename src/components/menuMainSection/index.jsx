@@ -24,7 +24,8 @@ function MenuMainSection(props) {
           title={element.title}
           subtitle={element.subtitle}
           text={element.text}
-          author={element.author[0].name}
+          author={element.author}
+          category={element.category}
           handleCardClick={HandleCardClick} />
         )}
       </div>     

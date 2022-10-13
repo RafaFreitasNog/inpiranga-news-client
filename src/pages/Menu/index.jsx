@@ -31,6 +31,8 @@ function Menu() {
     }, 1000);
   }, [loading])
 
+  console.log(articlesArray);
+
   return ( 
     <Fragment>
       {fetching ? (<Loading />) : 

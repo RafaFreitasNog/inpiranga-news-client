@@ -61,38 +61,40 @@ function AuthProvider({ children }) {
     Api.defaults.headers.authtoken = undefined
   }
 
-  useEffect(() => {
-    // rehidrate
-    async function revalidateToken() {
-      if (isColumnist) {        
-        try {
-          const response = await ColumnistService.revalidate()
-          console.log(response);
-        } catch (error) {
-          console.log(error);
-          handleLogout()
-        }
-      } else {
-        try {
-          const response = await UserService.revalidate()
-          console.log(response);
-        } catch (error) {
-          console.log(error);
-          handleLogout()
-        }
+  async function revalidateToken(user) {
+    if (user.columnist) {        
+      try {
+        const response = await ColumnistService.revalidate()
+        console.log(response);
+      } catch (error) {
+        console.log(error);
+        handleLogout()
+      }
+    } else {
+      try {
+        const response = await UserService.revalidate()
+        console.log(response);
+      } catch (error) {
+        console.log(error);
+        handleLogout()
       }
     }
+    setUser(user)
+    setIsColumnist(user.columnist)
+    setAuth(true)
+  }
+
+  useEffect(() => {
+    // rehidrate
     
     const token = localStorage.getItem('in-token')
     const userInStorage = JSON.parse(localStorage.getItem('in-user'))
     
-    if (token) {
-      setUser(userInStorage)
-      setIsColumnist(userInStorage.columnist)
+    if (token && userInStorage) {
       Api.defaults.headers.authtoken = `${JSON.parse(token)}`
-      setAuth(true)
+      revalidateToken(userInStorage)
     }
-    revalidateToken()
+    
     setLoading(false)
   }, []);
 

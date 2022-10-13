@@ -16,6 +16,15 @@
   background-color: var(--gray-2);
 }
 
+.news-card-label-conteiner {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+
+  margin: 0 0 12px 0;
+}
+
 .news-card-title-conteiner {
   overflow: hidden;
   display: -webkit-box;
@@ -38,6 +47,7 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 
+  text-decoration: none;
   align-self: flex-end;
 }
 
