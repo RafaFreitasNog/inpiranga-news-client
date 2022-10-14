@@ -15,7 +15,6 @@ function Menu() {
   const [articlesArray, setArticlesArray] = useState([])
   
   useEffect(() => {
-    setTimeout(() => {
       async function getArticles() {
         try {
           const response = await ArticleService.getAll()
@@ -28,7 +27,6 @@ function Menu() {
       if (loading === false) {
         getArticles()
       }
-    }, 1000);
   }, [loading])
 
   return ( 

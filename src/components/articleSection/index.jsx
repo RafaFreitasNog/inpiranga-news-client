@@ -12,7 +12,7 @@ const moment = require('moment')
 function ArticleSection(props) {
 
   const navigate = useNavigate();
-  const { user } = useContext(Context);
+  const { user, addFavorite, removeFavorite } = useContext(Context);
   const [isFavorite, setIsFavorite] = useState(false);
 
   function handleEditButtonClick() {
@@ -29,9 +29,20 @@ function ArticleSection(props) {
     }
   }
 
+  function handleAddFavClick() {
+    addFavorite(props.article._id)
+    setIsFavorite(true)
+  }
+  function handleRemoveFavClick() {
+    removeFavorite(props.article._id)
+    setIsFavorite(true)
+  }
+
   useEffect(() => {
-    if (user.favorites.includes(props.article._id)) {
-      setIsFavorite(true)
+    if (user.columnist === false) {
+      if (user.favorites.includes(props.article._id)) {
+        setIsFavorite(true)
+      }
     }
   }, [user, props])
 
@@ -54,8 +65,10 @@ function ArticleSection(props) {
             { props.isOwner && <EditButtons 
                                 deleteClick={handleDeleteButtonClick} 
                                 editClick={handleEditButtonClick}  /> }
-            { (user.columnist === false && isFavorite) && <IoBookmark id='article-fav-icon-marked'/> }
-            { (user.columnist === false && isFavorite === false) && <IoBookmarkOutline id='article-fav-icon-unmarked'/> }
+            { (user.columnist === false && isFavorite) && 
+            <IoBookmark id='article-fav-icon-marked'  onClick={handleRemoveFavClick} /> }
+            { (user.columnist === false && isFavorite === false) &&
+             <IoBookmarkOutline id='article-fav-icon-unmarked'  onClick={handleAddFavClick} /> }
           </div>
         </div>
         <div></div>

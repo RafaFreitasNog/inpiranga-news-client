@@ -17,6 +17,14 @@ const UserService = {
     const response = Api.get(`/users/favorites`)
     return response
   },
+  addFavorite: async (articleId) => {
+    const response = await Api.put(`/users/favorites/add/${articleId}`)
+    return response
+  },
+  removeFavorite : async (articleId) => {
+    const response = await Api.put(`/users/favorites/remove/${articleId}`)
+    return response
+  },
   revalidate: async () => {
     const response = await Api.post('/users/revalidate')
     return response

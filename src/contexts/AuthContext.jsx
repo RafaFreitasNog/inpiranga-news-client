@@ -61,6 +61,16 @@ function AuthProvider({ children }) {
     Api.defaults.headers.authtoken = undefined
   }
 
+  async function addFavorite(articleId) {
+    const response = await UserService.addFavorite(articleId)
+    console.log(response);
+  }
+  
+  async function removeFavorite(articleId) {
+    const response = await UserService.removeFavorite(articleId)
+    console.log(response);
+  }
+
   async function revalidateToken(user) {
     if (user.columnist) {        
       try {
@@ -108,7 +118,7 @@ function AuthProvider({ children }) {
   }
 
   return (
-    <Context.Provider value={{ auth, handleLogin, handleLogout, loading, user, isColumnist }}>
+    <Context.Provider value={{ auth, handleLogin, handleLogout, addFavorite, removeFavorite, loading, user, isColumnist }}>
       {children}
     </Context.Provider>
   )
