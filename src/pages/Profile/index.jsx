@@ -31,7 +31,7 @@ function ProfilePage(props) {
     async function fetchData() {
       try {
         const getUser = await UserService.getOne(userId)
-        const getArticles = await ArticleService.getWrittenBy(userId)
+        const getArticles = await UserService.getFavorites()
         setPageUser(getUser.data)
         setArticles(getArticles.data)
         if (user._id === getUser.data._id) {

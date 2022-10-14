@@ -29,7 +29,7 @@ function DropdownMenu(props) {
         { isColumnist === false && 
         <div>
           <button className='dropdown-button' ><IoPersonOutline className='dropdown-button-icon' /><p className='small dropdown-button-text' onClick={handleUserProfileClick}>Profile</p></button>
-          <button className='dropdown-button' ><IoHeartOutline className='dropdown-button-icon' /><p className='small dropdown-button-text'>Favorites</p></button>
+          <button className='dropdown-button' ><IoHeartOutline className='dropdown-button-icon' /><p className='small dropdown-button-text' onClick={handleUserProfileClick}>Favorites</p></button>
         </div>
         }
         <button className='dropdown-button dropdown-button-logout' onClick={handleLogout}> <IoLogOutSharp className='dropdown-button-icon'/> <p className='small bold dropdown-button-text'>Logout</p></button>

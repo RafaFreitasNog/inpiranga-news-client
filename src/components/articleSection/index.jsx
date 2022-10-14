@@ -35,7 +35,7 @@ function ArticleSection(props) {
   }
   function handleRemoveFavClick() {
     removeFavorite(props.article._id)
-    setIsFavorite(true)
+    setIsFavorite(false)
   }
 
   useEffect(() => {
@@ -60,7 +60,7 @@ function ArticleSection(props) {
                         state={{ columnistId: props.article.author[0]._id }} 
                         id='columnist-profile-link'>
                         {props.article.author[0].name}</Link>, Ipiranga News</p>
-              <p id='article-section-time-info' className='small italic'>Published {moment(props.article.created_at).format('ll')}, updated {moment(props.article.created_at).fromNow()}</p>
+              <p id='article-section-time-info' className='small italic'>Published {moment(props.article.created_at).format('ll')}, updated {moment(props.article.updated_at).fromNow()}</p>
             </div>
             { props.isOwner && <EditButtons 
                                 deleteClick={handleDeleteButtonClick} 

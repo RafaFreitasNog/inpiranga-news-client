@@ -13,7 +13,7 @@ const UserService = {
     const response = await Api.get(`/users/${userId}`)
     return response
   },
-  getFavorites: async (userId) => {
+  getFavorites: async () => {
     const response = Api.get(`/users/favorites`)
     return response
   },
