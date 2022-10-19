@@ -13,6 +13,10 @@ const ArticleService = {
     const response = await Api.get(`/articles/writtenby/${columnistId}`)
     return response
   },
+  getByCategory: async (categoryId) => {
+    const response = await Api.get(`/articles/category/${categoryId}`)
+    return response
+  },
   post: async (params) => {
     const response = await Api.post('/articles/', params);
     return response

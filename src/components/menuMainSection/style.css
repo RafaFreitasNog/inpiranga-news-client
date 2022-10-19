@@ -1,6 +1,5 @@
 #menu-grid-conteiner{
   background-color: var(--gray-1);
-  margin-top: 32px;
   row-gap: 32px;
 }
 #menu-main-section-title-conteiner {

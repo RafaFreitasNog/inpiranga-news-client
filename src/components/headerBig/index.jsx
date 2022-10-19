@@ -3,7 +3,8 @@ import './style.css'
 import { IoMenuSharp, IoPersonCircleSharp, IoCaretDownOutline } from "react-icons/io5";
 import { Context } from '../../Contexts/AuthContext';
 import DropdownMenu from '../../Assets/dropdownMenu';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import CategoriesService from '../../Services/categories'
 
 function HeaderBig(props) {
 
@@ -11,6 +12,7 @@ function HeaderBig(props) {
   const navigate = useNavigate();
 
   const [name, setName] = useState('');
+  const [categoryList, setCategoryList] = useState([]);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   function handleDropdownClick() {
@@ -22,7 +24,12 @@ function HeaderBig(props) {
   }
 
   useEffect(() => {
+    async function fetchData() {
+      const response = await CategoriesService.getAll()
+      setCategoryList(response.data);
+    }
     if (loading === false) {
+      fetchData()
       setName(user.name)
     }
   }, [user, loading]);
@@ -49,6 +56,15 @@ function HeaderBig(props) {
           </div>
         </div>
         {dropdownOpen && <DropdownMenu/> }
+      </div>
+      <div id='header-categories-section'>
+        {categoryList.map((element) => 
+          <Link 
+          key={element._id}
+          className='header-category-conteiner'>
+            <p>{element.name}</p>
+          </Link>
+        )}
       </div>
       <div id='header-big-blue'><p id='header-big-blue-text' className='upper white small'>assine já</p></div>
     </Fragment>

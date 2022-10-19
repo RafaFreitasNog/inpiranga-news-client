@@ -1,6 +1,7 @@
 #header-big-conteiner {
   height: 120px;
-  background-color: var(--gray-2);
+  background-color: var(--gray-1);
+  border-bottom: 1px solid var(--yellow);
 }
 #header-big-content-conteiner {
   height: 100%;
@@ -57,4 +58,20 @@
   background-color: var(--yellow);
   padding: 8px;
   border-radius: 4px;
+}
+
+#header-categories-section {
+  background-color: var(--gray-1);
+  text-transform: lowercase;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.header-category-conteiner {
+  padding: 12px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.header-category-conteiner:hover {
+  background-color: var(--gray-2);
 }

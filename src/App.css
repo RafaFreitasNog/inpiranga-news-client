@@ -31,10 +31,9 @@ body {
 
 .grid1200 {
   display: grid;
-  grid-template-columns: repeat(12, 72px);
+  grid-template-columns: repeat(12, 1fr);
   column-gap: 24px;
-  max-width: 1128px;
-  margin: auto;
+  margin: 0 80px 0 80px;
 }
 
 h1 {
