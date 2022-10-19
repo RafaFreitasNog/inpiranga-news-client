@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import './style.css'
 
 function CategoryList() {
+  //changed
   return ( 
     <Fragment>
       <div className='grid1200'>
