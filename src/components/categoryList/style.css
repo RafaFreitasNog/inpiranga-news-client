@@ -1,0 +1,17 @@
+.list-category-title {
+  grid-column: span 12;
+  margin-bottom: 24px;
+}
+.list-category-scroller {
+  grid-column: span 12;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 28%;
+  gap: 12px;
+
+  overflow-x: auto;
+}
+.list-category-media {
+  background-color: var(--red-1);
+  height: 80px;
+}

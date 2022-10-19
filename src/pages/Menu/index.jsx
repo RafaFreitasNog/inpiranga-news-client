@@ -7,6 +7,7 @@ import { IoAddCircleSharp } from 'react-icons/io5'
 import './style.css'
 import HeaderBig from '../../Components/headerBig';
 import Loading from '../LoadingScreen';
+import CategoryList from '../../Components/categoryList';
 
 function Menu() {
 
@@ -45,6 +46,8 @@ function Menu() {
                 {isColumnist && <button className='menu-button-write'> <IoAddCircleSharp id='menu-add-icon' className='white'/> Write New</button> }
               </Link>
             </div>
+            <CategoryList/>
+            <CategoryList/>
           </div>
         </Fragment>
       }
