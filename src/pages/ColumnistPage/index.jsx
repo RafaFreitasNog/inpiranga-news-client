@@ -24,7 +24,7 @@ function ColumnistPage(props) {
   const [fetching, setFetching] = useState(true);
 
   function HandleCardClick(id) {
-    navigate('/article', { state: { articleId: id } });
+    navigate(`/article/${id}`)
   }
 
   useEffect(() => {

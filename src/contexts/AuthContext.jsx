@@ -112,11 +112,6 @@ function AuthProvider({ children }) {
     setLoading(false)
   }, []);
 
-  
-  if (loading) {
-    return <Loading/>
-  }
-
   return (
     <Context.Provider value={{ auth, handleLogin, handleLogout, addFavorite, removeFavorite, loading, user, isColumnist }}>
       {children}

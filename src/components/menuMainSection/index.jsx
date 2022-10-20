@@ -8,7 +8,9 @@ function MenuMainSection(props) {
   const navigate = useNavigate();
   
   function HandleCardClick(id) {
-    navigate('/article', { state: { articleId: id } });
+    navigate(`/article/${id}`);
+    //navigate(`/hello`);
+    //window.location.href = `http://localhost:3000/hello/${id}`
   }
 
   return ( 

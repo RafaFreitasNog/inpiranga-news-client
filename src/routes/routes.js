@@ -18,7 +18,7 @@ const Routing = () => (
       <Route path='/loading' element={<Loading/>} />
       <Route element={<PrivateRoutes/>} >
         <Route path='/' element={<Menu/>} />
-        <Route path='/article' element={<Article/>} />
+        <Route path='/article/:articleId' element={<Article/>} />
         <Route path='/writearticle' element={<WriteArticle/>} />
         <Route path='/editarticle' element={<EditArticle/>} />
         <Route path='/columnistprofile' element={<ColumnistPage/>} />
