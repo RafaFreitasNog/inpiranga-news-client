@@ -21,7 +21,7 @@ const Routing = () => (
         <Route path='/article/:articleId' element={<Article/>} />
         <Route path='/writearticle' element={<WriteArticle/>} />
         <Route path='/editarticle' element={<EditArticle/>} />
-        <Route path='/columnistprofile' element={<ColumnistPage/>} />
+        <Route path='/columnistpage/:columnistId' element={<ColumnistPage />} />
         <Route path='/profile' element={<ProfilePage/>} />
       </Route>
     </Routes>

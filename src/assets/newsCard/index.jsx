@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import './style.css'
 import { IoBookmark, IoBookmarkOutline, IoNewspaperSharp } from "react-icons/io5";
-import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { Context } from '../../Contexts/AuthContext';
 import { useState } from 'react';
@@ -47,9 +46,9 @@ function NewsCard(props) {
             <p className='news-card-subtitle'>{props.subtitle}</p>
           </div>
         </div>
-        <Link className='news-card-author-conteiner'>
+        <div className='news-card-author-conteiner' onClick={() => props.handleColumnistClick(props.author[0]._id)}>
           <p className='news-card-author small italic bold'>~ {props.author[0].name}</p>
-        </Link>
+        </div>
       </div>
     </Fragment>
    );

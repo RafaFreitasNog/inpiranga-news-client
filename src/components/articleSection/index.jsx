@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import { useState } from 'react';
 import { Fragment } from 'react';
 import { IoBookmark, IoBookmarkOutline } from 'react-icons/io5';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import EditButtons from '../../Assets/editButtons';
 import { Context } from '../../Contexts/AuthContext';
 import ArticleService from '../../Services/article';
@@ -37,6 +37,9 @@ function ArticleSection(props) {
     removeFavorite(props.article._id)
     setIsFavorite(false)
   }
+  function handleColumnistClick() {
+    navigate(`/columnistpage/${props.article.author[0]._id}`)
+  }
 
   useEffect(() => {
     if (user.columnist === false) {
@@ -55,11 +58,10 @@ function ArticleSection(props) {
           <div id='article-section-info-icons'>
             <div id='article-section-info-conteiner'>
               <p id='article-section-author-info' className='bold'>
-                By <Link 
-                        to="/columnistprofile" 
-                        state={{ columnistId: props.article.author[0]._id }} 
+                By <span 
+                        onClick={handleColumnistClick}
                         id='columnist-profile-link'>
-                        {props.article.author[0].name}</Link>, Ipiranga News</p>
+                        {props.article.author[0].name}</span>, Ipiranga News</p>
               <p id='article-section-time-info' className='small italic'>Published {moment(props.article.created_at).format('ll')}, updated {moment(props.article.updated_at).fromNow()}</p>
             </div>
             { props.isOwner && <EditButtons 

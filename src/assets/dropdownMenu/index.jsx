@@ -10,7 +10,7 @@ function DropdownMenu(props) {
   const navigate = useNavigate();
 
   function handleColumnistProfileClick() {
-    navigate('/columnistprofile', { state: {columnistId: user._id} })
+    navigate(`/columnistpage/${user._id}`)
   }
 
   function handleUserProfileClick() {

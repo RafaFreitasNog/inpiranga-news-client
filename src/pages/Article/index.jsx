@@ -1,5 +1,5 @@
 import { Fragment, useContext, useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ArticleSection from '../../Components/articleSection';
 import Header from '../../Components/header';
 import { Context } from '../../Contexts/AuthContext';
@@ -8,8 +8,6 @@ import './style.css'
 
 function Article(props) {
 
-  //const { state } = useLocation();
-  //const { articleId } = state
   const { articleId } = useParams()
   const { loading, user } = useContext(Context)
   const [article, setArticle] = useState()

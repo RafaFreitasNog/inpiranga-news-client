@@ -2,7 +2,7 @@ import moment from 'moment';
 import { useContext } from 'react';
 import { useState } from 'react';
 import { Fragment, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import ProfileNewsCard from '../../Assets/profileNewsCard';
 import Header from '../../Components/header';
 import { Context } from '../../Contexts/AuthContext';
@@ -13,8 +13,7 @@ import './style.css'
 function ColumnistPage(props) {
 
   const navigate = useNavigate();
-  const location = useLocation();
-  const { columnistId } = location.state
+  const { columnistId } = useParams();
 
   const { loading, user } = useContext(Context);
 

@@ -7,10 +7,13 @@ function MenuMainSection(props) {
 
   const navigate = useNavigate();
   
-  function HandleCardClick(id) {
-    navigate(`/article/${id}`);
-    //navigate(`/hello`);
-    //window.location.href = `http://localhost:3000/hello/${id}`
+  function handleCardClick(articleId) {
+    navigate(`/article/${articleId}`);
+  }
+
+  function handleColumnistClick(columnistId) {
+    console.log(columnistId);
+    navigate(`/columnistpage/${columnistId}`);
   }
 
   return ( 
@@ -28,7 +31,8 @@ function MenuMainSection(props) {
           text={element.text}
           author={element.author}
           category={element.category}
-          handleCardClick={HandleCardClick} />
+          handleCardClick={handleCardClick}
+          handleColumnistClick={handleColumnistClick} />
         )}
       </div>     
     </Fragment>
